@@ -1,0 +1,55 @@
+{
+    "root": {
+        "data": {
+            "id": "c4sjoauk8dk0",
+            "created": 1596984264098,
+            "text": "Schema与数据类型优化"
+        },
+        "children": [
+            {
+                "data": { 
+                    "id": "c4sjpqtmbds0",
+                    "created": 1596984377233,
+                    "text": "选择合适的数据类型",
+                    "layout_mind_offset": {
+                        "x": -96,
+                        "y": -40
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "c4sjqmiiehk0",
+                            "created": 1596984446219,
+                            "text": "尽量使用可以正确存储数据的最小数据类型"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "c4sjsns0awg0",
+                            "created": 1596984605698,
+                            "text": "尽量使用简单数据类型"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "c4sjui3o9a80",
+                            "created": 1596984750071,
+                            "text": "尽量避免使用NULL值",
+                            "layout_right_offset": {
+                                "x": 1,
+                                "y": -10
+                            }
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

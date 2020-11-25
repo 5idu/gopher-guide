@@ -1,0 +1,1169 @@
+{
+    "root": {
+        "data": {
+            "id": "c4vyvjztm3k0",
+            "created": 1597331829075,
+            "text": "mysql",
+            "hyperlink": null,
+            "hyperlinkTitle": null
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "c4vyy9gu1hk0",
+                    "created": 1597332041251,
+                    "text": "事务",
+                    "layout_mind_offset": {
+                        "x": -4,
+                        "y": -4
+                    },
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "c4vz6wmcmk00",
+                            "created": 1597332718564,
+                            "text": "概念"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4vz7eb2oao0",
+                                    "created": 1597332757064,
+                                    "text": "事务是指作为单个逻辑单元执行的一系列操作，要么全部执行成功，要么全部执行失败"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4vz7gegmqo0",
+                                    "created": 1597332761623,
+                                    "text": "为数据库操作提供了一个从失败中恢复正常状态的方法，同时提供了数据库即使在异常状态下也能保持一致性的方法"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4vz9iia6000",
+                                    "created": 1597332922935,
+                                    "text": "当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4vzc57btfc0",
+                            "created": 1597333129067,
+                            "text": "特性",
+                            "expandState": "expand",
+                            "layout_right_offset": {
+                                "x": 0,
+                                "y": 37
+                            }
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4vzmssfnow0",
+                                    "created": 1597333964051,
+                                    "text": "原子性（Atomicity）"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4vzoe1m9cg0",
+                                            "created": 1597334088683,
+                                            "text": "事务作为一个整体被执行，包含在其中对数据库的操作要么全部执行，要么全部不执行"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4vzn0ar0cg0",
+                                    "created": 1597333980396,
+                                    "text": "一致性（Consistency）"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4vzph49gag0",
+                                            "created": 1597334173738,
+                                            "text": "事务应确保数据库的状态从一个一致性状态转变为另一个一致性状态。一致性状态的含义是数据库中的数据应满足完整性约束"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "c4zc6jfyoe00",
+                                                    "created": 1597674044178,
+                                                    "text": "强一致性"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zcomi01lk0",
+                                                            "created": 1597675461387,
+                                                            "text": "读操作可以立即读到提交的更新操作。"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "c4zc6nf2zb40",
+                                                    "created": 1597674052832,
+                                                    "text": "弱一致性"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zcopamj3k0",
+                                                            "created": 1597675467471,
+                                                            "text": "提交的更新操作，不一定立即会被读操作读到，此种情况会存在一个不一致窗口，指的是读操作可以读到最新值的一段时间。"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "c4zc6qatdgg0",
+                                                    "created": 1597674059105,
+                                                    "text": "最终一致性"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zcosiakog0",
+                                                            "created": 1597675474465,
+                                                            "text": "是弱一致性的特例。事务更新一份数据，最终一致性保证在没有其他事务更新同样的值的话，最终所有的事务都会读到之前事务更新的最新值。如果没有错误发生，不一致窗口的大小依赖于：通信延迟，系统负载等"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "c4zc7azjpw00",
+                                                    "created": 1597674104136,
+                                                    "text": "单调一致性"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zcoz006qo0",
+                                                            "created": 1597675488597,
+                                                            "text": "如果一个进程已经读到一个值，那么后续不会读到更早的值。"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "c4zc7deo06w0",
+                                                    "created": 1597674109403,
+                                                    "text": "会话一致性"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zcp1ydza80",
+                                                            "created": 1597675495029,
+                                                            "text": "保证客户端和服务器交互的会话过程中，读操作可以读到更新操作后的最新值。"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4vzn5ukhmo0",
+                                    "created": 1597333992479,
+                                    "text": "隔离性（Isolation）"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4vzr793ad40",
+                                            "created": 1597334308990,
+                                            "text": "多个事务并发执行时，一个事务的执行不影响其他事务的执行"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "c4zcka0x6pc0",
+                                                    "created": 1597675120776,
+                                                    "text": "可能出现的问题",
+                                                    "expandState": "expand"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zc8be8e2g0",
+                                                            "created": 1597674183388,
+                                                            "text": "脏读"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "c4zcnkccn400",
+                                                                    "created": 1597675378327,
+                                                                    "text": "事务A修改了一个数据，但未提交，事务B读到了事务A未提交的更新结果，如果事务A提交失败，事务B读到的就是脏数据。"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zc8e38ljk0",
+                                                            "created": 1597674189253,
+                                                            "text": "不可重复读"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "c4zco1olvbk0",
+                                                                    "created": 1597675416074,
+                                                                    "text": "在同一个事务中，对于同一份数据读取到的结果不一致。比如，事务B在事务A提交前读到的结果，和提交后读到的结果可能不同。不可重复读出现的原因就是事务并发修改记录，要避免这种情况，最简单的方法就是对要修改的记录加锁，这回导致锁竞争加剧，影响性能。另一种方法是通过MVCC可以在无锁的情况下，避免不可重复读。"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zc8igwpuo0",
+                                                            "created": 1597674198787,
+                                                            "text": "幻读"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "c4zcnqhcuo80",
+                                                                    "created": 1597675391691,
+                                                                    "text": "在同一个事务中，同一个查询多次返回的结果不一致。事务A新增了一条记录，事务B在事务A提交前后各执行了一次查询操作，发现后一次比前一次多了一条记录。幻读是由于并发事务增加记录导致的，这个不能像不可重复读通过记录加锁解决，因为对于新增的记录根本无法加锁。需要将事务串行化，才能避免幻读。"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zv5tgihqg0",
+                                                            "created": 1597727588704,
+                                                            "text": "丢失修改"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "c4zv5wv2wh40",
+                                                                    "created": 1597727596115,
+                                                                    "text": "指在一个事务读取一个数据时，另外一个事务也访问了该数据，那么在第一个事务中修改了这个数据后，第二个事务也修改了这个数据。这样第一个事务内的修改结果就被丢失，因此称为丢失修改。 例如：事务1读取某表中的数据A=20，事务2也读取A=20，事务1修改A=A-1，事务2也修改A=A-1，最终结果A=19，事务1的修改被丢失"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "c4zckgx5jfc0",
+                                                    "created": 1597675135786,
+                                                    "text": "事务的隔离级别"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zckxn7shs0",
+                                                            "created": 1597675172190,
+                                                            "text": "读未提交"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "c4zcnbgfws80",
+                                                                    "created": 1597675358984,
+                                                                    "text": "最低的隔离级别，什么都不需要做，一个事务可以读到另一个事务未提交的结果。所有的并发事务问题都会发生。"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zckzrp5ko0",
+                                                            "created": 1597675176815,
+                                                            "text": "读提交"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "c4zclz2xzio0",
+                                                                    "created": 1597675253682,
+                                                                    "text": "只有在事务提交后，其更新结果才会被其他事务看见。可解决脏读"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zcl3xuamo0",
+                                                            "created": 1597675185893,
+                                                            "text": "可重复读"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "c4zcm418ou80",
+                                                                    "created": 1597675264463,
+                                                                    "text": "在一个事务中，对于同一份数据的读取结果总是相同的，无论是否有其他事务对这份数据进行操作，以及这个事务是否提交。可解决脏读、不可重复读"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "c4zcl89kf2w0",
+                                                            "created": 1597675195309,
+                                                            "text": "序列化"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "c4zcmgvj4680",
+                                                                    "created": 1597675292416,
+                                                                    "text": "事务串行化执行，隔离级别最高，牺牲了系统的并发性。可以解决并发事务的所有问题"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4vzn2dcm3s0",
+                                    "created": 1597333984907,
+                                    "text": "持久性（Durability）"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4vzrqltqko0",
+                                            "created": 1597334351119,
+                                            "text": "一个事务一旦提交，他对数据库的修改应该永久保存在数据库中"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "c4vzuxp8imw0",
+                    "created": 1597334601655,
+                    "text": "索引",
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "c4wips7g0co0",
+                            "created": 1597387798963,
+                            "text": "目的",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4wipu08bbs0",
+                                    "created": 1597387802880,
+                                    "text": "索引的目的在于提高查询效率，类比字典",
+                                    "hyperlink": null,
+                                    "hyperlinkTitle": null
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4wiqrgri3s0",
+                            "created": 1597387875714,
+                            "text": "原理",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4yam8omry00",
+                                    "created": 1597568072408,
+                                    "text": "是一种数据结构"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4wiqt5eo000",
+                                    "created": 1597387879381,
+                                    "text": "通过不断的缩小想要获得数据的范围来筛选出最终想要的结果，同时把随机的事件变成顺序的事件，也就是我们总是通过同一种查找方式来锁定数据"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4wk0i5iq340",
+                            "created": 1597391460194,
+                            "text": "性质",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4wk0pnlkgw0",
+                                    "created": 1597391476525,
+                                    "text": "非叶子节点不存储真实的数据，只存储指向搜索方向的数据项"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4wk7wezokw0",
+                                    "created": 1597392039791,
+                                    "text": "为了降低磁盘IO次数，树的高度要尽量的小，为了降低树的高度，索引要尽量的小。当数据项为1时，将退化为线性表"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4wkbgi4jw80",
+                                    "created": 1597392318609,
+                                    "text": "最左前缀匹配特性：当索引项是复合的数据结构，比如(name,age,sex)时，b+数是按照从左到右的顺序来建立搜索树的"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4wkwdv032g0",
+                            "created": 1597393958505,
+                            "text": "索引方法",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4wkwgeajio0",
+                                    "created": 1597393964024,
+                                    "text": "hash"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4wkx9f5evc0",
+                                            "created": 1597394027203,
+                                            "text": "hsah索引在mysql中用的比较少，他是把数据的索引以hash形式组织起来，因此当查找某一条记录的时候，速度非常快。但是因为是hash结构，每个键只对应一个值，而且是散列的方式分布。所以他并不支持范围查找和排序等功能"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4wkwibtzsw0",
+                                    "created": 1597393968229,
+                                    "text": "b+tree"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4wky78r3k80",
+                                            "created": 1597394100827,
+                                            "text": "b+tree是mysql中使用最频繁的一个索引数据结构。b+tree以平衡树的形式来组织，因为是树型结构，所以更适合用来处理排序、范围查找等功能。相比hash索引，B+树在查找单条记录的速度虽然比不上hash索引，但是因为更适合排序等操作，所以他更受用户的欢迎。毕竟不可能只对数据库进行单条记录的操作"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4wkpnmo4k80",
+                            "created": 1597393431219,
+                            "text": "分类",
+                            "expandState": "collapse",
+                            "layout_right_offset": {
+                                "x": 0,
+                                "y": 24
+                            }
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4ywtjdi0gw0",
+                                    "created": 1597630708647,
+                                    "text": "从存储结构上划分"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4ywtphbt5s0",
+                                            "created": 1597630721939,
+                                            "text": "b+tree, b-tree"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "c4ywtun20xk0",
+                                            "created": 1597630733169,
+                                            "text": "hash"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "c4ywtvxp3cw0",
+                                            "created": 1597630735989,
+                                            "text": "full-index 全文索引"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "c4ywu0n6jg00",
+                                            "created": 1597630746237,
+                                            "text": "RTree"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4ywuc2ti9c0",
+                                    "created": 1597630771128,
+                                    "text": "从应用层次上划分",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4wkrirrqag0",
+                                            "created": 1597393577372,
+                                            "text": "普通索引"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "c4wkttwo7fk0",
+                                                    "created": 1597393758342,
+                                                    "text": "最基本的索引，没有任何限制"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "c4wkrdb0d540",
+                                            "created": 1597393565475,
+                                            "text": "唯一索引"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "c4wktxcvpds0",
+                                                    "created": 1597393765852,
+                                                    "text": "与\"普通索引\"类似，不同的就是：索引列的值必须唯一，但允许有空值"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "c4wkr5pzty80",
+                                            "created": 1597393548967,
+                                            "text": "主键索引",
+                                            "expandState": "expand"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "c4wku2ab5vs0",
+                                                    "created": 1597393776580,
+                                                    "text": "它是一种特殊的唯一索引，不允许有空值"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "c4wkrkr1gd40",
+                                            "created": 1597393581682,
+                                            "text": "全文索引"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "c4wku7rf2m00",
+                                                    "created": 1597393788499,
+                                                    "text": "仅可用于 MyISAM 表，针对较大的数据，生成全文索引，耗时耗空间"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "c4wkrp64hi80",
+                                            "created": 1597393591301,
+                                            "text": "组合索引"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "c4wkujbcko00",
+                                                    "created": 1597393813649,
+                                                    "text": "为了更多的提高mysql效率可建立组合索引，遵循 \"最左前缀匹配\" 原则"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4ywvdlw3bs0",
+                                    "created": 1597630852822,
+                                    "text": "从表记录的排列顺序和索引的排列顺序是否一致来划分",
+                                    "layout_right_offset": {
+                                        "x": 0,
+                                        "y": 5
+                                    },
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4yi0s634o80",
+                                            "created": 1597588959690,
+                                            "text": "聚集索引（以主键创建的索引）：该索引中键值的逻辑顺序决定了表中相应行的物理顺序"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "c4yi2f3w52w0",
+                                            "created": 1597589087987,
+                                            "text": "非聚集索引（以非主键创建的索引，也叫做二级索引）：该索引中索引的逻辑顺序与磁盘上行的物理存储顺序不同，一个表可以包含多个非聚集索引"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4wkgvszzo00",
+                            "created": 1597392743739,
+                            "text": "建立索引的几个原则",
+                            "expandState": "collapse",
+                            "layout_right_offset": {
+                                "x": -1,
+                                "y": 34
+                            }
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4wkh64co940",
+                                    "created": 1597392766193,
+                                    "text": "最左前缀匹配原则，非常重要的原则，mysql会一直向右匹配直到遇到范围查询(>、<、between、like)就停止匹配，比如a = 1 and b = 2 and c > 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4wkh93mj880",
+                                    "created": 1597392772680,
+                                    "text": "=和in可以乱序，比如a = 1 and b = 2 and c = 3 建立(a,b,c)索引可以任意顺序，mysql的查询优化器会帮你优化成索引可以识别的形式"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4wkhci5qd40",
+                                    "created": 1597392780089,
+                                    "text": "尽量选择区分度高的列作为索引，区分度的公式是count(distinct col)/count(*)，表示字段不重复的比例，比例越大我们扫描的记录数越少，唯一键的区分度是1，而一些状态、性别字段可能在大数据面前区分度就是0，那可能有人会问，这个比例有什么经验值吗？使用场景不同，这个值也很难确定，一般需要join的字段我们都要求是0.1以上，即平均1条扫描10条记录"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4wkhf90xbk0",
+                                    "created": 1597392786067,
+                                    "text": "索引列不能参与计算，保持列“干净”，比如from_unixtime(create_time) = ’2014-05-29’就不能使用到索引，原因很简单，b+树中存的都是数据表中的字段值，但进行检索时，需要把所有元素都应用函数才能比较，显然成本太大。所以语句应该写成create_time = unix_timestamp(’2014-05-29’)"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4wkhhy7hz40",
+                                    "created": 1597392791943,
+                                    "text": "尽量的扩展索引，不要新建索引。比如表中已经有a的索引，现在要加(a,b)的索引，那么只需要修改原来的索引即可"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4yhy41ayvc0",
+                                    "created": 1597588750430,
+                                    "text": "使用前缀索引优化索引所占大小，但是前缀索引不能用于order by和 group by操作"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4z1s0ccets0",
+                            "created": 1597644694403,
+                            "text": "区别",
+                            "layout_right_offset": {
+                                "x": -2,
+                                "y": 41
+                            }
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4z1s9m1zmo0",
+                                    "created": 1597644714581,
+                                    "text": "b树"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4z1sdn9t0w0",
+                                            "created": 1597644723362,
+                                            "text": "内节点包含指针，主键值，行记录。叶子结点包含主键和行记录"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4z1ubbo2eo0",
+                                    "created": 1597644875035,
+                                    "text": "MyISAM主键索引"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4z1uf4hypc0",
+                                            "created": 1597644883309,
+                                            "text": "内节点包含指针，主键值。叶子节点包含主键值，行记录的物理指针及指向同级叶子结点的指针。"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4z1ve7qxy00",
+                                    "created": 1597644959693,
+                                    "text": "MyISAM辅助索引"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4z1vwvl9u00",
+                                            "created": 1597645000317,
+                                            "text": "MyISAM主键索引和辅助索引在结构上没有任何区别，只是主键索引要求 key 是唯一的，而辅助索引的 key 可以重复"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4z1tbuzhy00",
+                                    "created": 1597644797839,
+                                    "text": "InnoDB主键索引（b+树）"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4z1tegrv6g0",
+                                            "created": 1597644803510,
+                                            "text": "内节点包含指针，主键值。叶子结点包含主键值，行记录和指向同级叶子结点的指针"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4z1xuvq6gg0",
+                                    "created": 1597645152700,
+                                    "text": "InnoDB辅助索引（b+树）"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4z1ybl8ykg0",
+                                            "created": 1597645189071,
+                                            "text": "内节点包含指针，辅助索引值。叶子结点包含辅助索引值，主键值和指向同级叶子结点的指针"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "c4yig60qm340",
+                    "created": 1597590165304,
+                    "text": "锁",
+                    "expandState": "collapse",
+                    "layout_right_offset": {
+                        "x": 9,
+                        "y": 48
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "c4yig7m4s1s0",
+                            "created": 1597590168774,
+                            "text": "乐观锁",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4yihx6khe00",
+                                    "created": 1597590302794,
+                                    "text": "假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4yiz74h5sg0",
+                                    "created": 1597591656626,
+                                    "text": "乐观锁的思路一般是表中增加版本字段，比如version。更新时where语句中增加版本的判断，算是一种CAS（Compare And Swep）操作"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4yigc8t8200",
+                            "created": 1597590178853,
+                            "text": "悲观锁",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4yihuwled40",
+                                    "created": 1597590297837,
+                                    "text": "定义：假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4z43kk7g9s0",
+                                    "created": 1597651242641,
+                                    "text": "共享锁"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4z56lkqs2w0",
+                                            "created": 1597654301052,
+                                            "text": "又称读锁。其他事务可以并发读取数据，但任何事务都不能对数据进行修改（获取数据上的排他锁），直到已释放所有共享锁"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "c4z43mta42o0",
+                                    "created": 1597651247542,
+                                    "text": "排他锁"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "c4z50achtnk0",
+                                            "created": 1597653806423,
+                                            "text": "又称写锁。若某个事务对某一行加上了排他锁，只能这个事务对其进行读写，在此事务结束之前，其他事务不能对其进行加任何锁，其他进程可以读取,不能进行写操作，需等待其释放。"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4yio46yxsw0",
+                            "created": 1597590788241,
+                            "text": "使用乐观锁和悲观锁的条件",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4yioq9vgvc0",
+                                    "created": 1597590836305,
+                                    "text": "读的多，冲突几率小时使用乐观锁"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4yiovusj9c0",
+                                    "created": 1597590848454,
+                                    "text": "写的多，冲突几率大时使用悲观锁"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4z5vqb5ia00",
+                            "created": 1597656270460,
+                            "text": "表锁"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4z5xgj9zqo0",
+                                    "created": 1597656405911,
+                                    "text": "相对行锁来说，速度慢，内存消耗小，但是并发效率低 "
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "c4z5vt27ymg0",
+                            "created": 1597656276451,
+                            "text": "行锁"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4z5wdx0ryo0",
+                                    "created": 1597656321848,
+                                    "text": "定义：innoDB只有在通过索引条件检索数据时使用行级锁，否则使用表锁！"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4z5xaskj6o0",
+                                    "created": 1597656393413,
+                                    "text": "由于需要请求大量的锁资源，所以速度慢，内存消耗大，但是并发效率高"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "c4zcqt6dwi00",
+                    "created": 1597675632650,
+                    "text": "MVCC",
+                    "layout_right_offset": {
+                        "x": 7,
+                        "y": 64
+                    },
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "c4zrmhmanig0",
+                            "created": 1597717610683,
+                            "text": "定义：同一份数据临时保留多版本的一种方式，进而实现并发控制"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "c4zsfw9ctls0",
+                                    "created": 1597719915113,
+                                    "text": "MVCC是被Mysql中 事务型存储引擎InnoDB 所支持的;"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4zsg27cy8o0",
+                                    "created": 1597719928053,
+                                    "text": "应对高并发事务, MVCC比单纯的加锁更高效;"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4zsg75ct3s0",
+                                    "created": 1597719938816,
+                                    "text": "MVCC只在 READ COMMITTED 和 REPEATABLE READ 两个隔离级别下工作;"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4zsg9bxg5c0",
+                                    "created": 1597719943567,
+                                    "text": "MVCC可以使用 乐观(optimistic)锁 和 悲观(pessimistic)锁来实现;"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4zsgboo1ew0",
+                                    "created": 1597719948691,
+                                    "text": "各数据库中MVCC实现并不统一"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "c4zsggx2g0w0",
+                                    "created": 1597719960082,
+                                    "text": "InnoDB会在每行添加三个隐藏字段，其中有2个字段跟MVCC有关"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "c4zruojygew0",
+                    "created": 1597718252692,
+                    "text": "log",
+                    "layout_right_offset": {
+                        "x": 9,
+                        "y": 81
+                    },
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "c4zrusat05s0",
+                            "created": 1597718260846,
+                            "text": "redo log"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "c4zruuftn340",
+                            "created": 1597718265503,
+                            "text": "bin log"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "c4zruxyr7c80",
+                            "created": 1597718273178,
+                            "text": "undo log"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "c4zsx7j116g0",
+                    "created": 1597721271833,
+                    "text": "InnoDB和MyISAM区别",
+                    "layout_right_offset": {
+                        "x": 1,
+                        "y": 105
+                    },
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "c4zsxjhyvwo0",
+                            "created": 1597721297891,
+                            "text": "MyIsam只有表级锁，innodb支持表级锁，行级锁，默认为行级锁"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "c4zsyx55rs00",
+                            "created": 1597721405955,
+                            "text": "MyISAM 强调的是性能，每次查询具有原子性,其执行速度比InnoDB类型更快，但是不提供事务支持。但是InnoDB 提供事务支持事务，外部键等高级数据库功能。 具有事务(commit)、回滚(rollback)和崩溃修复能力(crash recovery capabilities)的事务安全(transaction-safe (ACID compliant))型表。"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "c4zt00hh1a00",
+                            "created": 1597721491594,
+                            "text": "是否支持MVCC：仅 InnoDB 支持。应对高并发事务, MVCC比单纯的加锁更高效;MVCC只在 READ COMMITTED 和 REPEATABLE READ 两个隔离级别下工作;MVCC可以使用 乐观(optimistic)锁 和 悲观(pessimistic)锁来实现;各数据库中MVCC实现并不统一"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "snow-compact",
+    "version": "1.4.43"
+}
